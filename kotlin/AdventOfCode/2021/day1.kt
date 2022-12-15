@@ -1,11 +1,13 @@
 fun main() {
-  while true {
-    previous = getLine().toString().toInt()
-    counter = 0
-    while (depth = getLine().toString().toInt()) {
+  var counter = 0
+  var previous = readLine().toString().toInt()
+  while (true) {
+      var depth = readLine().toString().toIntOrNull()
+      if (depth == null)
+        break
       if (depth > previous)
         counter++
+      previous = depth
     }
-  }
   println(counter)
 }
